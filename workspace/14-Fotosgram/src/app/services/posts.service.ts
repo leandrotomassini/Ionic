@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
-import { promise } from 'protractor';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@awesome-cordova-plugins/file-transfer/ngx';
 import { environment } from 'src/environments/environment';
 import { Post, RespuestaPosts } from '../interfaces/interfaces';
 import { UsuarioService } from './usuario.service';
@@ -16,7 +16,7 @@ export class PostsService {
 
   nuevoPost = new EventEmitter<Post>();
 
-  constructor(private http: HttpClient, private usuarioService: UsuarioService) { }
+  constructor(private http: HttpClient, private usuarioService: UsuarioService, private fileTransfer: FileTransfer) { }
 
   getPosts(pull: boolean = false) {
 
@@ -42,6 +42,26 @@ export class PostsService {
           resolve(true);
         });
     });
+  }
+
+  subirImagen(img: string) {
+
+    const options: FileUploadOptions = {
+
+      fileKey: 'image',
+
+      headers: {
+        'x-token': this.usuarioService.token
+      }
+    }
+
+    const fileTransfer: FileTransferObject = this.fileTransfer.create();
+    fileTransfer.upload(img, `${URL}/posts/upload`, options)
+      .then(data => {
+        console.log(data);
+      }).catch(err => {
+        console.log('Error en carga de la imágen. ', err);
+      });
   }
 
 }

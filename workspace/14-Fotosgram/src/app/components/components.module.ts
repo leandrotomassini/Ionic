@@ -7,6 +7,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { PostComponent } from './posts/post/post.component';
 import { PostsComponent } from './posts/posts/posts.component';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 
@@ -14,7 +15,8 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
   declarations: [
     PostComponent,
     PostsComponent,
-    AvatarSelectorComponent
+    AvatarSelectorComponent,
+    MapaComponent
   ],
   exports: [
     PostsComponent,

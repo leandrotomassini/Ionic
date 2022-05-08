@@ -19,6 +19,9 @@
     "@angular/platform-browser": "~13.2.2",
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
+    "@awesome-cordova-plugins/camera": "^5.41.0",
+    "@awesome-cordova-plugins/file-transfer": "^5.41.0",
+    "@awesome-cordova-plugins/geolocation": "^5.41.0",
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.5.1",
     "@capacitor/haptics": "1.1.4",
@@ -29,6 +32,11 @@
     "@ionic/cordova-builders": "^6.1.0",
     "@ionic/storage": "^3.0.6",
     "@ionic/storage-angular": "^3.0.6",
+    "01": "^0.0.1",
+    "cordova-android": "10.1.2",
+    "cordova-plugin-camera": "^6.0.0",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-geolocation": "^4.1.0",
     "cordova-sqlite-storage": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
@@ -51,7 +59,13 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
+    "cordova-ios": "^6.2.0",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -71,7 +85,16 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-nativestorage": {}
-    }
+      "cordova-plugin-nativestorage": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }

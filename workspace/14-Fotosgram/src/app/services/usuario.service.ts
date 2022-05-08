@@ -88,11 +88,12 @@ export class UsuarioService {
       return Promise.resolve(false);
     }
 
-    const headers = new HttpHeaders({
-      'x-token': this.token
-    });
-
     return new Promise<boolean>(resolve => {
+
+      const headers = new HttpHeaders({
+        'x-token': this.token
+      });
+
       this.http.get(`${URL}/user/`, { headers })
         .subscribe(resp => {
 
@@ -131,7 +132,7 @@ export class UsuarioService {
     });
   }
 
- 
+
 
 
 }
